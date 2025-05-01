@@ -6,20 +6,33 @@
    cd 
    ```
 
-2. Run the docker container [docker (hyperlink)]:
+2. Run the docker container [docker hyperlink https://docs.docker.com/desktop/]:
     ```bash
-    docker-compose up
+    docker-compose up --build
     ```
 
-3. API: Access at http://localhost:8080
-    Database: 
+3. API: 
+    http://localhost:8080/v1/swift-codes/
+    documentation at http://localhost:8080/docs
+
+4. Database access (mongosh hyperlink https://www.mongodb.com/try/download/shell)
     ```bash
     mongosh "localhost:27017"
     ```
 
-4. api documentation:
-    http://localhost:8080/docs
+5. Parse excel file (file is already included, but can be changed if needed)
+    Run a shell inside the app container:
+    ```bash
+    docker-compose exec app bash
+    ```
+    ```bash
+    python
+    >>> from app.parser import parse_excel
+    >>> parse_excel("/data/Interns_2025_SWIFT_CODES.xlsx")
+    ```
 
 5. testing:
 
 ### Project description
+
+technologies used: fastapi, mongodb, pandas
