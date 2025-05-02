@@ -1,13 +1,14 @@
 import pandas as pd
+
 from app.crud import create_swift_code
 from app.models import SwiftCodeCreateRequest
 
 def parse_excel(file_path: str):
     try:
         df = pd.read_excel(file_path, engine='openpyxl')
-        print(f"✅ Successfully loaded Excel file with {len(df)} records")
+        print(f"✔ Successfully loaded Excel file with {len(df)} records")
     except Exception as e:
-        print(f"❌ Failed to load Excel file: {str(e)}")
+        print(f"✖ Failed to load Excel file: {str(e)}")
         return
 
     df['COUNTRY ISO2 CODE'] = df['COUNTRY ISO2 CODE'].str.upper()
@@ -33,7 +34,7 @@ def parse_excel(file_path: str):
             print(f"✔ Processed row {index+1}: {row['SWIFT CODE']}")
         except Exception as e:
             error_count += 1
-            error_msg = f"❌ Error in row {index+1} ({row.get('SWIFT CODE', 'N/A')}): {str(e)}"
+            error_msg = f"✖ Error in row {index+1} ({row.get('SWIFT CODE', 'N/A')}): {str(e)}"
             errors.append(error_msg)
             print(error_msg)
 
@@ -43,7 +44,7 @@ def parse_excel(file_path: str):
     print(f"Failed: {error_count}")
     
     if errors:
-        print("\n🚨 Error Details:")
+        print("\nError Details:")
         for error in errors:
             print(f"- {error}")
 

@@ -26,9 +26,7 @@
     docker-compose exec app bash
     ```
     ```bash
-    python
-    >>> from app.parser import parse_excel
-    >>> parse_excel("/data/Interns_2025_SWIFT_CODES.xlsx")
+    make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
     ```
 
 5. testing:
