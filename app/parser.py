@@ -31,14 +31,13 @@ def parse_excel(file_path: str):
             )
             create_swift_code(data.model_dump())
             success_count += 1
-            print(f"✔ Processed row {index+1}: {row['SWIFT CODE']}")
         except Exception as e:
             error_count += 1
             error_msg = f"✖ Error in row {index+1} ({row.get('SWIFT CODE', 'N/A')}): {str(e)}"
             errors.append(error_msg)
             print(error_msg)
 
-    print("\n Parsing Summary:")
+    print("Parsing Summary:")
     print(f"Total records: {len(df)}")
     print(f"Successfully processed: {success_count}")
     print(f"Failed: {error_count}")
