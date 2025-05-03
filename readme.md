@@ -3,8 +3,8 @@ This project provides a RESTful API to manage and query SWIFT codes (Bank Identi
 
 ## Prerequisites
 Before running the project, ensure you have:
-* Docker.
-* mongosh (optional, for manual database access).
+* [Docker](https://docs.docker.com/desktop/)
+* [Mongosh](https://www.mongodb.com/try/download/shell) (optional, for manual database access)
 
 ## Setup and Running the Project
 
@@ -20,11 +20,13 @@ Build and run the Docker containers:
 ```bash
 docker-compose up --build
 ```
-This starts the API at http://localhost:8080 and MongoDB at localhost:27017.
+This starts the API at http://localhost:8080 and MongoDB at ```localhost:27017```.
 
 ### 3. **Parse the Excel File**
 
-The repository includes a sample Excel file (Interns_2025_SWIFT_CODES.xlsx). To parse it:
+The repository includes a sample Excel file (```./data/Interns_2025_SWIFT_CODES.xlsx```). 
+
+#### To parse it:
 Access the app container's shell:
 ```bash
 docker-compose exec app bash
@@ -33,7 +35,7 @@ Run the parsing command:
 ```
 make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 ```
-You can replace the file path with a custom Excel file if needed, byt ensure the Excel file follows the expected format (see ```./data/Interns_2025_SWIFT_CODES.xlsx``` for reference).
+You can replace the file path with a custom Excel file if needed, but ensure the Excel file follows the expected format (see ```./data/Interns_2025_SWIFT_CODES.xlsx``` for reference).
 
 ### 4. **Access the API**
 
@@ -45,7 +47,7 @@ API Documentation: http://localhost:8080/docs (interactive Swagger UI)
 
 To manually query the MongoDB database:
 ```bash
-mongosh "mongodb://localhost:27017"
+mongosh "localhost:27017"
 ```
 
 ###  6. **Run Tests**
