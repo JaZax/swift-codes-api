@@ -1,7 +1,7 @@
 import pytest
 import requests
 
-BASE_URL = "http://app:8080/v1/swift-codes"
+BASE_URL = "http://localhost:8080/v1/swift-codes"
 
 swift_payload_hq = {
     "address": "Cracow",

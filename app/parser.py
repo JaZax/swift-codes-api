@@ -10,6 +10,31 @@ def parse_excel(file_path: str):
     except Exception as e:
         print(f"✖ Failed to load Excel file: {str(e)}")
         return
+    
+    if df.empty:
+        print("✖ Empty Excel file - no records to process")
+        return {
+            "total_records": 0,
+            "success_count": 0,
+            "error_count": 0,
+            "errors": []
+        }
+    
+    required_columns = {
+        "ADDRESS", "NAME", "COUNTRY ISO2 CODE", 
+        "COUNTRY NAME", "SWIFT CODE"
+    }
+
+    missing_columns = required_columns - set(df.columns)
+
+    if missing_columns:
+        print(f"✖ Missing required columns: {missing_columns}")
+        return {
+            "total_records": 0,
+            "success_count": 0,
+            "error_count": 0,
+            "errors": [f"Missing columns: {missing_columns}"]
+        }
 
     df['COUNTRY ISO2 CODE'] = df['COUNTRY ISO2 CODE'].str.upper()
     df['COUNTRY NAME'] = df['COUNTRY NAME'].str.upper()
