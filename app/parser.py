@@ -33,7 +33,7 @@ def parse_excel(file_path: str):
             success_count += 1
         except Exception as e:
             error_count += 1
-            error_msg = f"✖ Error in row {index+1} ({row.get('SWIFT CODE', 'N/A')}): {str(e)}"
+            error_msg = f"\n✖ Error in row {index+1} ({row.get('SWIFT CODE', 'N/A')}): {str(e)}"
             errors.append(error_msg)
             print(error_msg)
 
@@ -45,7 +45,7 @@ def parse_excel(file_path: str):
     if errors:
         print("\nError Details:")
         for error in errors:
-            print(f"- {error}")
+            print(f"\n- {error}")
 
     return {
         "total_records": len(df),
