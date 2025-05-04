@@ -1,8 +1,8 @@
 # SWIFT Codes API
 
-This project provides a RESTful API to manage and query SWIFT codes (Bank Identifier Codes) stored in a MongoDB database. It parses SWIFT code data from an Excel file, stores it, and exposes endpoints to retrieve, add, and delete SWIFT code information. The solution is containerized using Docker.
+This project provides a RESTful API to manage and query SWIFT codes (Bank Identifier Codes) stored in a MongoDB database. It parses SWIFT code data from an Excel file, stores it, and exposes endpoints to retrieve, add, and delete SWIFT code information. The solution is containerized using Docker, and tested using Pytest.
 
-Since I'm interested in joining Data Engineering team, I did the task using python (as per email).
+Since I'm interested in joining the Data Engineering team, I did the task using python (as per the email).
 
 ---
 
@@ -59,7 +59,7 @@ $ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 
 ### 4. Access the API
 
-- [API Endpoints Documentation](./endpoints.md)
+- **API Endpoints Documentation**: [available here](./endpoints.md)
 - **Swagger Docs:** `http://localhost:8080/docs`
 - **Base URL:** `http://localhost:8080/v1/swift-codes/`
 
@@ -115,16 +115,16 @@ swift-codes-api/
 ├── docker-compose.yml    # Docker Compose config
 ├── Dockerfile            # Dockerfile for app
 ├── Makefile              # Utility commands (parse_excel)
-└── README.md             # This file
+└── README.md             # This file :)
 ```
 
 ---
 
 ## Author
 
-email: iza.janeczekk@gmail.com
+Email: iza.janeczekk@gmail.com
 
---
+---
 
 ## License
 
