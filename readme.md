@@ -69,7 +69,7 @@ $ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 
 Make sure that mongosh is [added to PATH](https://www.mongodb.com/docs/mongodb-shell/install/).
 
-In a new terminal: 
+*In a new terminal*: 
 
 ```sh
 # Open a connection to MongoDB
@@ -80,7 +80,7 @@ $ mongosh "localhost:27017"
 
 ### 6. Run Tests
 
-In a new terminal: 
+*In a new terminal*: 
 
 ```sh
 # Access the app container's shell
@@ -119,6 +119,12 @@ swift-codes-api/
 ```
 
 ---
+
+## Author
+
+email: iza.janeczekk@gmail.com
+
+--
 
 ## License
 
