@@ -67,6 +67,8 @@ $ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 
 ### 5. Access the Database (Optional)
 
+Make sure that mongosh is [added to PATH](https://www.mongodb.com/docs/mongodb-shell/install/).
+
 ```sh
 # Open a connection to MongoDB
 $ mongosh "localhost:27017"
