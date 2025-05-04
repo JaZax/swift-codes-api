@@ -57,8 +57,9 @@ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 
 ### 4. Access the API
 
-- **Base URL:** `http://localhost:8080/v1/swift-codes/`
+- [API Endpoints Documentation](./endpoints.md)
 - **Swagger Docs:** `http://localhost:8080/docs`
+- **Base URL:** `http://localhost:8080/v1/swift-codes/`
 
 ---
 
