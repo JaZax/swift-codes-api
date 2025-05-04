@@ -29,6 +29,8 @@ $ cd swift-codes-api
 
 ### 2. Start the Application
 
+Ensure Docker is installed and running
+
 ```sh
 # Build and start the container
 $ docker-compose up --build -d
