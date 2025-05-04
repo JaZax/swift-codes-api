@@ -2,6 +2,8 @@
 
 This project provides a RESTful API to manage and query SWIFT codes (Bank Identifier Codes) stored in a MongoDB database. It parses SWIFT code data from an Excel file, stores it, and exposes endpoints to retrieve, add, and delete SWIFT code information. The solution is containerized using Docker.
 
+Since I'm interested in joining Data Engineering team, I did the task using python (as per email).
+
 ---
 
 ## Prerequisites
@@ -19,8 +21,8 @@ Before running the project, ensure you have:
 
 ```sh
 # Clone the repository and navigate to the project folder
-git clone https://github.com/JaZax/swift-codes-api
-cd swift-codes-api
+$ git clone https://github.com/JaZax/swift-codes-api
+$ cd swift-codes-api
 ```
 
 ---
@@ -29,7 +31,7 @@ cd swift-codes-api
 
 ```sh
 # Build and start the container
-docker-compose up --build -d
+$ docker-compose up --build -d
 ```
 
 - The API will be available at: `http://localhost:8080`
@@ -43,12 +45,12 @@ Sample file included: `./data/Interns_2025_SWIFT_CODES.xlsx`
 
 ```sh
 # Access the app container's shell
-docker-compose exec app bash
+$ docker-compose exec app bash
 ```
 
 ```sh
 # Inside the container: parse the Excel file
-make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
+$ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 ```
 
 *You can replace the file path with your own, but make sure the format matches the sample file.*
@@ -67,7 +69,7 @@ make parse_excel FILE=/data/Interns_2025_SWIFT_CODES.xlsx
 
 ```sh
 # Open a connection to MongoDB
-mongosh "localhost:27017"
+$ mongosh "localhost:27017"
 ```
 
 ---
@@ -76,23 +78,24 @@ mongosh "localhost:27017"
 
 ```sh
 # Access the app container's shell
-docker-compose exec app bash
+$ docker-compose exec app bash
 ```
 
 ```sh
 # Inside the container: run the tests
-python -m pytest tests/ -v
+$ python -m pytest tests/ -v
 ```
 
 ---
 
 ## Technologies Used
 
-- **FastAPI** — REST API framework  
-- **MongoDB** — Document-based database  
-- **Pandas** — Excel parsing  
-- **Docker** — Container orchestration  
+- **FastAPI** — API framework  
+- **MongoDB** — Database 
+- **Pandas** — Excel parsing
+- **Pydantic** — Validation
 - **Pytest** — Testing framework
+- **Docker** — Containerization  
 
 ---
 
